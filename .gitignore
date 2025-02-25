@@ -1,0 +1,7 @@
+/.idea
+/.vscode
+/CMakeLists.txt
+/build
+/cmake-build-debug
+/main
+/test.db
