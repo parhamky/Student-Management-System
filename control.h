@@ -101,16 +101,9 @@ void students(vector<person>& p, sqlite3* db) {
     cout << "Choose reshte: ";
     getline(cin, reshteinp);
 
-    vector<person> temp;
-    for (auto& li : p) {
-        if (li.reshte == reshteinp)
-            temp.push_back(li);
-    }
-
     cout << left << setw(15) << "Name" << setw(10) << "ID" << setw(15) << "Reshte" << right << setw(10) << "Average" << endl;
     cout << "--------------------------------------------------" << endl;
-    sort(temp.begin(), temp.end(), compare);
-    for (auto& li : temp) {
+    for (auto& li : p) {
         cout << left << setw(15) << li.name << setw(10) << li.id << setw(15) << li.reshte << right << setw(7) << li.average << endl;
     }
 
@@ -123,7 +116,7 @@ void students(vector<person>& p, sqlite3* db) {
         return;
     }
 
-    for (auto& li : temp) {
+    for (auto& li : p) {
         if (li.id == inpid) {
             student(li, db);
             return;

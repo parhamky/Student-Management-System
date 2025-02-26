@@ -103,7 +103,7 @@ vector<lesson> getLessons(unsigned long int student_id, sqlite3* db) {
 }
 vector<person> getStudents(sqlite3* db) {
     vector<person> students;
-    string sql = "SELECT * FROM person;";
+    string sql = "SELECT * FROM person ORDER BY average DESC;";
     sqlite3_exec(db, sql.c_str(), [](void* data, int argc, char** argv, char** colNames) -> int {
         vector<person>* students = static_cast<vector<person>*>(data);
         person p;
